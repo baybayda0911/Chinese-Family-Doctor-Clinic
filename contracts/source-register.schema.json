@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/source-register.schema.json",
+  "title": "source-register",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source_kind": {
+            "enum": [
+              "upstream",
+              "official_candidate",
+              "ocr_candidate"
+            ]
+          },
+          "license": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "review_status": {
+            "enum": [
+              "discovered",
+              "retrieved",
+              "reviewed",
+              "approved_for_scope",
+              "superseded",
+              "withdrawn"
+            ]
+          },
+          "reuse_mode": {
+            "enum": [
+              "adapted_with_license",
+              "external_reference",
+              "candidate_only"
+            ]
+          },
+          "population": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "last_checked": {
+            "type": "string",
+            "format": "date"
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "approved_scope": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "source_id",
+          "title",
+          "url",
+          "source_kind",
+          "license",
+          "review_status",
+          "reuse_mode",
+          "population",
+          "last_checked",
+          "version",
+          "approved_scope",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "sources"
+  ],
+  "additionalProperties": false
+}

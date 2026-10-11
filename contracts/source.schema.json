@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/source.schema.json",
+  "title": "source",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "enum": [
+        "report_document",
+        "clinician_document",
+        "user_statement",
+        "ai_analysis"
+      ]
+    },
+    "doc_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "encounter_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "locator": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "table": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "human_reviewed": {
+      "const": true
+    }
+  },
+  "required": [
+    "kind",
+    "human_reviewed"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "report_document",
+              "clinician_document"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "doc_id",
+          "locator"
+        ],
+        "properties": {
+          "locator": {
+            "minProperties": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "user_statement",
+              "ai_analysis"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "encounter_id"
+        ]
+      }
+    }
+  ]
+}

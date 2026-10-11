@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "task_id": "demo-task-001",
+  "member_id": "demo-member-001",
+  "description": "整理既有日常记录，准备咨询问题",
+  "owner_id": "demo-actor-A",
+  "source_type": "user_choice",
+  "source_ids": [],
+  "due_at": null,
+  "date_precision": "unknown",
+  "status": "planned",
+  "reminder_enabled": false
+}

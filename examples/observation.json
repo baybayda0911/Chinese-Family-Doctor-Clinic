@@ -1,0 +1,24 @@
+{
+  "synthetic": true,
+  "observation_id": "demo-observation-001",
+  "member_id": "demo-member-001",
+  "item": "体重",
+  "raw_text": "体重 64.5 kg",
+  "value": 64.5,
+  "unit": "kg",
+  "reference_range": null,
+  "observed_at": "2026-10-10",
+  "date_precision": "date",
+  "source": {
+    "kind": "report_document",
+    "doc_id": "demo-document-001",
+    "locator": {
+      "page": 1,
+      "table": 1,
+      "row": 2,
+      "column": 2
+    },
+    "human_reviewed": true
+  },
+  "review_status": "human_reviewed"
+}

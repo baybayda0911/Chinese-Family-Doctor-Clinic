@@ -1,0 +1,74 @@
+{
+  "synthetic": true,
+  "fixture_type": "contract_fixture",
+  "schema_version": "0.1.0",
+  "package_id": "demo-package-001",
+  "created_at": "2026-10-11T00:00:00+08:00",
+  "sender_vault_id": "demo-vault-A",
+  "receiver_vault_id": "demo-vault-B",
+  "member": {
+    "member_id": "demo-member-001",
+    "primary_vault_id": "demo-vault-A",
+    "receiver_role": "readonly_replica"
+  },
+  "authorization": {
+    "grant_id": "demo-grant-001",
+    "purpose": "虚构已核对日常摘要交换",
+    "record_types": [
+      "reviewed_report_fact"
+    ],
+    "categories": [
+      "general"
+    ],
+    "confirmed": true,
+    "date_from": "2026-10-10",
+    "date_to": "2026-10-10"
+  },
+  "source_summaries": [
+    {
+      "doc_id": "demo-document-001",
+      "report_date": "2026-10-10",
+      "identity_removed": true,
+      "human_reviewed": true
+    }
+  ],
+  "records": [
+    {
+      "synthetic": true,
+      "record_id": "demo-record-001",
+      "revision": 1,
+      "member_id": "demo-member-001",
+      "record_type": "reviewed_report_fact",
+      "primary_vault_id": "demo-vault-A",
+      "sensitivity": "general",
+      "fact": {
+        "raw_text": "体重 64.5 kg",
+        "item": "体重",
+        "value": 64.5,
+        "unit": "kg",
+        "reference_range": null
+      },
+      "source": {
+        "kind": "report_document",
+        "doc_id": "demo-document-001",
+        "locator": {
+          "page": 1,
+          "table": 1,
+          "row": 2,
+          "column": 2
+        },
+        "human_reviewed": true
+      },
+      "observed_at": "2026-10-10",
+      "date_precision": "date",
+      "review_status": "confirmed",
+      "confirmed_by": "demo-actor-A",
+      "confirmed_at": "2026-10-11T00:00:00+08:00",
+      "supersedes": null
+    }
+  ],
+  "integrity": {
+    "algorithm": "SHA256",
+    "value": "22fd65314f91f14c90fa6dfd2458e98d02fd3cc0c85da4b2ccaf3a00bac1f89c"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "synthetic": true,
+  "record_id": "demo-record-001",
+  "revision": 1,
+  "member_id": "demo-member-001",
+  "record_type": "reviewed_report_fact",
+  "primary_vault_id": "demo-vault-A",
+  "sensitivity": "general",
+  "fact": {
+    "raw_text": "体重 64.5 kg",
+    "item": "体重",
+    "value": 64.5,
+    "unit": "kg",
+    "reference_range": null
+  },
+  "source": {
+    "kind": "report_document",
+    "doc_id": "demo-document-001",
+    "locator": {
+      "page": 1,
+      "table": 1,
+      "row": 2,
+      "column": 2
+    },
+    "human_reviewed": true
+  },
+  "observed_at": "2026-10-10",
+  "date_precision": "date",
+  "review_status": "confirmed",
+  "confirmed_by": "demo-actor-A",
+  "confirmed_at": "2026-10-11T00:00:00+08:00",
+  "supersedes": null
+}

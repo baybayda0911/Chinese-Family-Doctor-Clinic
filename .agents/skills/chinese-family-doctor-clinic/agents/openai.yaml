@@ -1,0 +1,4 @@
+interface:
+  display_name: "家庭医生诊所"
+  short_description: "中文家庭健康支持，按需分流六室，整理就医问题与日常任务"
+  default_prompt: "请使用 $chinese-family-doctor-clinic，基于已核对的必要信息整理本次健康问题、就医准备与随访任务。"

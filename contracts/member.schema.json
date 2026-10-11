@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/member.schema.json",
+  "title": "member",
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "type": "boolean"
+    },
+    "member_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "primary_vault_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "replica_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+      },
+      "uniqueItems": true
+    },
+    "life_stages": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "child",
+          "adult",
+          "older_adult",
+          "pregnancy"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "stage_source": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "synthetic",
+    "member_id",
+    "primary_vault_id",
+    "replica_ids",
+    "life_stages",
+    "stage_source"
+  ],
+  "additionalProperties": false
+}

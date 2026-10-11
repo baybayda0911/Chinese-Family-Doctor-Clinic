@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "clinical_data_root": null,
+  "local_identity_root": null,
+  "vault_id": null,
+  "region": "CN-mainland",
+  "sources": {
+    "yungho": {
+      "root": null,
+      "enabled": true
+    },
+    "tcm": {
+      "root": null,
+      "enabled": true,
+      "use_mode": "noncommercial",
+      "bundled_workflow_license": "CC-BY-NC-4.0"
+    },
+    "nihaixia": {
+      "root": null,
+      "enabled": false,
+      "distribution_status": "rights_pending"
+    },
+    "family_doctor_zh": {
+      "root": null,
+      "enabled": true,
+      "distribution_status": "no_license_found"
+    }
+  },
+  "reminders": {
+    "enabled": false
+  },
+  "cloud_ocr": {
+    "enabled": false
+  }
+}

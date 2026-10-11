@@ -1,0 +1,3 @@
+# Baseline validation only; no OCR/runtime application dependencies.
+jsonschema==4.26.0
+PyYAML==6.0.3

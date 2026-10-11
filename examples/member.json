@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "member_id": "demo-member-001",
+  "primary_vault_id": "demo-vault-A",
+  "replica_ids": [
+    "demo-vault-B"
+  ],
+  "life_stages": [
+    "adult"
+  ],
+  "stage_source": "虚构成年成员，无真实身份"
+}

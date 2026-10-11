@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/exchange.schema.json",
+  "title": "exchange",
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "const": true
+    },
+    "fixture_type": {
+      "const": "contract_fixture"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "package_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sender_vault_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "receiver_vault_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "member": {
+      "type": "object",
+      "properties": {
+        "member_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+        },
+        "primary_vault_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+        },
+        "receiver_role": {
+          "enum": [
+            "readonly_replica",
+            "primary_review"
+          ]
+        }
+      },
+      "required": [
+        "member_id",
+        "primary_vault_id",
+        "receiver_role"
+      ],
+      "additionalProperties": false
+    },
+    "authorization": {
+      "type": "object",
+      "properties": {
+        "grant_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "reviewed_report_fact",
+              "user_report",
+              "clinician_diagnosis",
+              "clinician_order",
+              "ai_analysis",
+              "task"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "general",
+              "mental_health",
+              "reproductive"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "confirmed": {
+          "const": true
+        },
+        "date_from": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "date_to": {
+          "type": ["string", "null"],
+          "format": "date"
+        }
+      },
+      "required": [
+        "grant_id",
+        "purpose",
+        "record_types",
+        "categories",
+        "confirmed",
+        "date_from",
+        "date_to"
+      ],
+      "additionalProperties": false
+    },
+    "source_summaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "doc_id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+          },
+          "report_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "identity_removed": {
+            "const": true
+          },
+          "human_reviewed": {
+            "const": true
+          }
+        },
+        "required": [
+          "doc_id",
+          "report_date",
+          "identity_removed",
+          "human_reviewed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "clinical-entry.schema.json"
+      },
+      "minItems": 1
+    },
+    "integrity": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "const": "SHA256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "synthetic",
+    "fixture_type",
+    "schema_version",
+    "package_id",
+    "created_at",
+    "sender_vault_id",
+    "receiver_vault_id",
+    "member",
+    "authorization",
+    "source_summaries",
+    "records",
+    "integrity"
+  ],
+  "additionalProperties": false
+}

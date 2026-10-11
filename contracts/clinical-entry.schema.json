@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/clinical-entry.schema.json",
+  "title": "clinical-entry",
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "type": "boolean"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "member_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "record_type": {
+      "enum": [
+        "reviewed_report_fact",
+        "user_report",
+        "clinician_diagnosis",
+        "clinician_order",
+        "ai_analysis",
+        "task"
+      ]
+    },
+    "primary_vault_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "sensitivity": {
+      "enum": [
+        "general",
+        "mental_health",
+        "reproductive"
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "properties": {
+        "raw_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference_range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "raw_text",
+        "value",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "$ref": "source.schema.json"
+    },
+    "observed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "date_precision": {
+      "enum": [
+        "date",
+        "datetime",
+        "unknown"
+      ]
+    },
+    "review_status": {
+      "const": "confirmed"
+    },
+    "confirmed_by": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "confirmed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "supersedes": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "record_id",
+            "revision"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "synthetic",
+    "record_id",
+    "revision",
+    "member_id",
+    "record_type",
+    "primary_vault_id",
+    "sensitivity",
+    "fact",
+    "source",
+    "observed_at",
+    "date_precision",
+    "review_status",
+    "confirmed_by",
+    "confirmed_at",
+    "supersedes"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "date"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observed_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "datetime"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "unknown"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observed_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "revision": {
+            "const": 1
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "supersedes": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "supersedes": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "enum": [
+              "clinician_diagnosis",
+              "clinician_order"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "properties": {
+              "kind": {
+                "const": "clinician_document"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "reviewed_report_fact"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "properties": {
+              "kind": {
+                "const": "report_document"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "user_report"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "properties": {
+              "kind": {
+                "const": "user_statement"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "ai_analysis"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "properties": {
+              "kind": {
+                "const": "ai_analysis"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

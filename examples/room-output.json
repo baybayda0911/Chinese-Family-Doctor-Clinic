@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "encounter_id": "demo-encounter-001",
+  "snapshot_revision": 1,
+  "room_id": "western-medicine",
+  "facts": [
+    "虚构报告记录体重64.5kg；已核对"
+  ],
+  "interpretations": [
+    "仅用于信息整理，无临床结论"
+  ],
+  "uncertainties": [
+    "其他资料未提供"
+  ],
+  "actions": [
+    "整理后续沟通问题"
+  ],
+  "referral": {
+    "needed": false,
+    "urgency": "unspecified",
+    "reason": null
+  },
+  "source_ids": [
+    "demo-document-001"
+  ],
+  "candidate_records": []
+}

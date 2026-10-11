@@ -1,0 +1,261 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "source_id": "upstream-yungho",
+      "title": "Yungho/family-doctor",
+      "url": "https://github.com/Yungho/family-doctor",
+      "source_kind": "upstream",
+      "license": "MIT",
+      "review_status": "retrieved",
+      "reuse_mode": "adapted_with_license",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "79b16623415904737dabd334fc0c39442683e5e2",
+      "approved_scope": [],
+      "notes": "已适配部分工作流并保留版权；医学评分和固定关联不自动启用"
+    },
+    {
+      "source_id": "upstream-tcm",
+      "title": "TCM.Skill",
+      "url": "https://github.com/YuanZHAO321/TCM.Skill",
+      "source_kind": "upstream",
+      "license": "CC-BY-NC-4.0",
+      "review_status": "retrieved",
+      "reuse_mode": "adapted_with_license",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "966a88acf942b6b8684575db3d1d3f261442b8a4",
+      "approved_scope": [],
+      "notes": "可选工作流改编单独CC BY-NC；完整知识库及教材不打包，个体用药规则待审阅"
+    },
+    {
+      "source_id": "upstream-nihaixia",
+      "title": "nihaixia",
+      "url": "https://github.com/jangviktor-web/nihaixia",
+      "source_kind": "upstream",
+      "license": null,
+      "review_status": "retrieved",
+      "reuse_mode": "external_reference",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "135deaba29141ff5e2f1620014c6a81a9d755398",
+      "approved_scope": [],
+      "notes": "完整许可与资料授权链待核实，可选流派参考"
+    },
+    {
+      "source_id": "upstream-family-doctor-zh",
+      "title": "family-doctor-zh",
+      "url": "https://github.com/yiyanli123/family-doctor-skills",
+      "source_kind": "upstream",
+      "license": null,
+      "review_status": "retrieved",
+      "reuse_mode": "external_reference",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "5d357e27e1cf26aaff97fd606023eee884e09f36",
+      "approved_scope": [],
+      "notes": "仓库中文模块，未发现许可证，引用流程结构而不复制原文发行"
+    },
+    {
+      "source_id": "cn-immunization-2026",
+      "title": "国家免疫规划疫苗儿童免疫程序及说明（2026年版）",
+      "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2073005020766703616.html",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2026",
+      "approved_scope": [],
+      "notes": "此前核实通知正文，附件具体程序待审阅"
+    },
+    {
+      "source_id": "cn-public-health-2017",
+      "title": "国家基本公共卫生服务规范（第三版）",
+      "url": "https://www.nhc.gov.cn/jws/s3578/201703/d20c37e23e1f4c7db7b8e25f34473e1b.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": null,
+      "approved_scope": [],
+      "notes": "候选；需复核现行性、地方细则与原附件"
+    },
+    {
+      "source_id": "ocr-rapidocr",
+      "title": "RapidAI/RapidOCR",
+      "url": "https://github.com/RapidAI/RapidOCR",
+      "source_kind": "ocr_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": null,
+      "approved_scope": [],
+      "notes": "未安装/选版；实际引入核验源码、模型及运行库许可"
+    },
+    {
+      "source_id": "ocr-paddleocr",
+      "title": "PaddlePaddle/PaddleOCR",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "source_kind": "ocr_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": null,
+      "approved_scope": [],
+      "notes": "未安装/选版；实际引入核验源码、模型及运行库许可"
+    },
+    {
+      "source_id": "ocr-docling",
+      "title": "docling-project/docling",
+      "url": "https://github.com/docling-project/docling",
+      "source_kind": "ocr_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": null,
+      "approved_scope": [],
+      "notes": "未安装/选版；实际引入核验源码、模型及运行库许可"
+    },
+    {
+      "source_id": "ocr-umi-ocr",
+      "title": "hiroi-sora/Umi-OCR",
+      "url": "https://github.com/hiroi-sora/Umi-OCR",
+      "source_kind": "ocr_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按需"
+      ],
+      "last_checked": "2026-10-11",
+      "version": null,
+      "approved_scope": [],
+      "notes": "未安装/选版；实际引入核验源码、模型及运行库许可"
+    },
+    {
+      "source_id": "cn-child-growth-2022",
+      "title": "7岁以下儿童生长标准 WS/T 423—2022",
+      "url": "https://www.nhc.gov.cn/fzs/c100048/202211/5001d7cf57774770a1d49c1df46a291f.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2022",
+      "approved_scope": [],
+      "notes": "原标准表与现行适用范围待审核"
+    },
+    {
+      "source_id": "cn-maternal-care-2011",
+      "title": "孕产期保健工作管理办法与规范",
+      "url": "https://www.nhc.gov.cn/zwgk/wtwj/201304/84ec2d5d37a54398ace49df48ca91c83.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2011",
+      "approved_scope": [],
+      "notes": "复核后续替代文件及地方细则，不能直接称当前完整标准"
+    },
+    {
+      "source_id": "cn-pregnancy-risk-2017",
+      "title": "孕产妇妊娠风险评估与管理工作规范",
+      "url": "https://www.nhc.gov.cn/fys/c100078/201711/c940e3204de64ee8bd074ad05f5a6548.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2017",
+      "approved_scope": [],
+      "notes": "候选；AI不替代医生分级，条款待审阅"
+    },
+    {
+      "source_id": "cn-crisis-hotline-2021",
+      "title": "心理援助热线技术指南（试行）",
+      "url": "https://www.nhc.gov.cn/wjw/c100175/202101/ce4756ac40e742a48b00ff32d3807825.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2021",
+      "approved_scope": [],
+      "notes": "专业热线流程候选，不代表AI具备同等干预能力"
+    },
+    {
+      "source_id": "cn-hotline-2024",
+      "title": "应用12356全国统一心理援助热线电话号码的通知",
+      "url": "https://www.nhc.gov.cn/yzygj/c100068/202412/49a1a65386cd4be582d4702fd0926ee8.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2024",
+      "approved_scope": [],
+      "notes": "当地接入和服务时间待复核，不假定24小时"
+    },
+    {
+      "source_id": "cn-child-mental-2025",
+      "title": "卫健委2025-05-30发布会",
+      "url": "https://www.nhc.gov.cn/xcs/c100122/202505/d3fbe0c634b749ab931497c1693e3961.shtml",
+      "source_kind": "official_candidate",
+      "license": null,
+      "review_status": "discovered",
+      "reuse_mode": "candidate_only",
+      "population": [
+        "按具体任务核验"
+      ],
+      "last_checked": "2026-10-11",
+      "version": "2025",
+      "approved_scope": [],
+      "notes": "措辞候选；不等同量表版本与计分审核"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "checked_at": "2026-10-11",
+  "distribution_model": "MIT core with separately licensed optional knowledge",
+  "entries": [
+    {
+      "source": "https://github.com/Yungho/family-doctor",
+      "commit": "79b16623415904737dabd334fc0c39442683e5e2",
+      "source_files": [
+        "family-doctor/SKILL.md",
+        "symptom-assistant/SKILL.md",
+        "care-coordinator/SKILL.md"
+      ],
+      "target_files": [
+        ".agents/skills/chinese-family-doctor-clinic/rooms/triage.md"
+      ],
+      "mode": "workflow_adaptation",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Yungho",
+      "license_copy": ".agents/skills/chinese-family-doctor-clinic/references/upstream/Yungho-LICENSE.txt",
+      "changes": "Chinese six-room workflow, minimum context and single confirmation; no automatic score/correlation/dose rules",
+      "bundled": true
+    },
+    {
+      "source": "https://github.com/Yungho/family-doctor",
+      "commit": "79b16623415904737dabd334fc0c39442683e5e2",
+      "source_files": [
+        "symptom-assistant/SKILL.md",
+        "medication-manager/SKILL.md",
+        "care-coordinator/SKILL.md"
+      ],
+      "target_files": [
+        ".agents/skills/chinese-family-doctor-clinic/rooms/western-medicine.md"
+      ],
+      "mode": "workflow_adaptation",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Yungho",
+      "license_copy": ".agents/skills/chinese-family-doctor-clinic/references/upstream/Yungho-LICENSE.txt",
+      "changes": "Chinese six-room workflow, minimum context and single confirmation; no automatic score/correlation/dose rules",
+      "bundled": true
+    },
+    {
+      "source": "https://github.com/Yungho/family-doctor",
+      "commit": "79b16623415904737dabd334fc0c39442683e5e2",
+      "source_files": [
+        "mental-health/SKILL.md"
+      ],
+      "target_files": [
+        ".agents/skills/chinese-family-doctor-clinic/rooms/mental-health.md"
+      ],
+      "mode": "workflow_adaptation",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Yungho",
+      "license_copy": ".agents/skills/chinese-family-doctor-clinic/references/upstream/Yungho-LICENSE.txt",
+      "changes": "Chinese six-room workflow, minimum context and single confirmation; no automatic score/correlation/dose rules",
+      "bundled": true
+    },
+    {
+      "source": "https://github.com/Yungho/family-doctor",
+      "commit": "79b16623415904737dabd334fc0c39442683e5e2",
+      "source_files": [
+        "goal-tracker/SKILL.md",
+        "vaccination-tracker/SKILL.md",
+        "care-coordinator/SKILL.md"
+      ],
+      "target_files": [
+        ".agents/skills/chinese-family-doctor-clinic/rooms/family-health.md"
+      ],
+      "mode": "workflow_adaptation",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Yungho",
+      "license_copy": ".agents/skills/chinese-family-doctor-clinic/references/upstream/Yungho-LICENSE.txt",
+      "changes": "Chinese six-room workflow, minimum context and single confirmation; no automatic score/correlation/dose rules",
+      "bundled": true
+    },
+    {
+      "source": "https://github.com/Yungho/family-doctor",
+      "commit": "79b16623415904737dabd334fc0c39442683e5e2",
+      "source_files": [
+        "document-tools/SKILL.md",
+        "health-timeline/SKILL.md"
+      ],
+      "target_files": [
+        ".agents/skills/chinese-family-doctor-clinic/rooms/records.md"
+      ],
+      "mode": "workflow_adaptation",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Yungho",
+      "license_copy": ".agents/skills/chinese-family-doctor-clinic/references/upstream/Yungho-LICENSE.txt",
+      "changes": "Chinese six-room workflow, minimum context and single confirmation; no automatic score/correlation/dose rules",
+      "bundled": true
+    },
+    {
+      "source": "https://github.com/YuanZHAO321/TCM.Skill",
+      "commit": "966a88acf942b6b8684575db3d1d3f261442b8a4",
+      "source_files": [
+        "SKILL.md",
+        "LICENSE.txt"
+      ],
+      "target_files": [
+        ".agents/skills/chinese-family-doctor-clinic/references/upstream/tcm-workflow.cc-by-nc.md"
+      ],
+      "mode": "optional_workflow_adaptation",
+      "license": "CC-BY-NC-4.0",
+      "attribution": "YuanZHAO321/TCM.Skill",
+      "license_copy": ".agents/skills/chinese-family-doctor-clinic/references/upstream/TCM.Skill-LICENSE.txt",
+      "changes": "Task routing, targeted knowledge lookup and clinician communication; no textbooks, formulas/dose/acupoint tables or case corpus",
+      "bundled": true,
+      "conditions": [
+        "noncommercial",
+        "attribution",
+        "indicate_modifications"
+      ]
+    },
+    {
+      "source": "https://github.com/jangviktor-web/nihaixia",
+      "commit": "135deaba29141ff5e2f1620014c6a81a9d755398",
+      "source_files": [
+        "SKILL.md",
+        "README.md"
+      ],
+      "target_files": [],
+      "mode": "external_reference",
+      "license_status": "README states MulanPSL-2.0; LICENSE file and third-party rights chain unresolved",
+      "bundled": false
+    },
+    {
+      "source": "https://github.com/yiyanli123/family-doctor-skills",
+      "commit": "5d357e27e1cf26aaff97fd606023eee884e09f36",
+      "source_files": [
+        "README.md",
+        "AGENTS.md",
+        "family-doctor-zh/SKILL.md"
+      ],
+      "target_files": [],
+      "mode": "external_reference",
+      "license_status": "No explicit redistribution license found",
+      "bundled": false
+    }
+  ]
+}

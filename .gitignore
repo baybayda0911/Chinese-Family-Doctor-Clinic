@@ -1,0 +1,41 @@
+# Local runtime and validation environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+node_modules/
+
+# Private configuration
+.env
+.env.*
+!.env.example
+config.local.json
+*.local.json
+*.local.yaml
+*.local.yml
+
+# Real data belongs outside the repository; these are defensive ignores
+vault/
+clinical-data/
+local-identity/
+originals/
+reviewed/
+imports/
+exports/
+backups/
+ocr-cache/
+models/
+logs/
+*.log
+
+# Workspace metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

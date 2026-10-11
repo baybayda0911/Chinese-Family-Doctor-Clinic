@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/observation.schema.json",
+  "title": "observation",
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "type": "boolean"
+    },
+    "observation_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "member_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "item": {
+      "type": "string",
+      "minLength": 1
+    },
+    "raw_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reference_range": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "date_precision": {
+      "enum": [
+        "date",
+        "datetime",
+        "unknown"
+      ]
+    },
+    "source": {
+      "$ref": "source.schema.json"
+    },
+    "review_status": {
+      "const": "human_reviewed"
+    }
+  },
+  "required": [
+    "synthetic",
+    "observation_id",
+    "member_id",
+    "item",
+    "raw_text",
+    "value",
+    "unit",
+    "reference_range",
+    "observed_at",
+    "date_precision",
+    "source",
+    "review_status"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "date"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observed_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "datetime"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "unknown"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observed_at": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

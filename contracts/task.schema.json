@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/task.schema.json",
+  "title": "task",
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "type": "boolean"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "member_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "source_type": {
+      "enum": [
+        "clinician_order",
+        "approved_guideline",
+        "user_choice"
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+      }
+    },
+    "due_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "date_precision": {
+      "enum": [
+        "date",
+        "datetime",
+        "unknown"
+      ]
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "reminder_enabled": {
+      "const": false
+    }
+  },
+  "required": [
+    "synthetic",
+    "task_id",
+    "member_id",
+    "description",
+    "owner_id",
+    "source_type",
+    "source_ids",
+    "due_at",
+    "date_precision",
+    "status",
+    "reminder_enabled"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "date"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "due_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "datetime"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "date_precision": {
+            "const": "unknown"
+          }
+        },
+        "required": [
+          "date_precision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "due_at": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

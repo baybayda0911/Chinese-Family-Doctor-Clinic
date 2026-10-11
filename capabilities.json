@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1.0",
+  "stage": "implementation_baseline",
+  "skill_name": "chinese-family-doctor-clinic",
+  "capabilities": [
+    {
+      "id": "instruction_skill",
+      "status": "files_ready",
+      "evidence": ".agents/skills/chinese-family-doctor-clinic/SKILL.md"
+    },
+    {
+      "id": "contracts_and_synthetic_examples",
+      "status": "files_ready",
+      "evidence": "contracts/member.schema.json"
+    },
+    {
+      "id": "baseline_checks",
+      "status": "passed",
+      "evidence": "docs/validation.md"
+    },
+    {
+      "id": "local_multi_format_ingestion",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "ocr",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "local_redaction_review_ui",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "records_transactions",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "manual_exchange",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "two_device_deployment",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "automatic_multi_agent",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "reminders",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "enforced_authorization",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "approved_medical_rules",
+      "status": "planned",
+      "evidence": "docs/roadmap.md"
+    },
+    {
+      "id": "functional_acceptance_A01_A28",
+      "status": "not_run",
+      "evidence": "docs/acceptance.md"
+    },
+    {
+      "id": "clinical_validation",
+      "status": "not_run",
+      "evidence": "docs/clinical-review.md"
+    }
+  ]
+}

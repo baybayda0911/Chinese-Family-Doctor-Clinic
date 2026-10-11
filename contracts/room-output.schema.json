@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baybayda0911.github.io/Chinese-Family-Doctor-Clinic/contracts/room-output.schema.json",
+  "title": "room-output",
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "type": "boolean"
+    },
+    "encounter_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+    },
+    "snapshot_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "room_id": {
+      "enum": [
+        "triage",
+        "western-medicine",
+        "tcm",
+        "mental-health",
+        "family-health",
+        "records"
+      ]
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "interpretations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "referral": {
+      "type": "object",
+      "properties": {
+        "needed": {
+          "type": "boolean"
+        },
+        "urgency": {
+          "enum": [
+            "unspecified",
+            "routine",
+            "prompt",
+            "urgent"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "needed",
+        "urgency",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+      }
+    },
+    "candidate_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "record_type": {
+            "enum": [
+              "reviewed_report_fact",
+              "user_report",
+              "clinician_diagnosis",
+              "clinician_order",
+              "ai_analysis",
+              "task"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,95}$"
+            }
+          },
+          "status": {
+            "const": "candidate"
+          }
+        },
+        "required": [
+          "record_type",
+          "summary",
+          "source_ids",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "synthetic",
+    "encounter_id",
+    "snapshot_revision",
+    "room_id",
+    "facts",
+    "interpretations",
+    "uncertainties",
+    "actions",
+    "referral",
+    "source_ids",
+    "candidate_records"
+  ],
+  "additionalProperties": false
+}
